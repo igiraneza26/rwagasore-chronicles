@@ -28,15 +28,18 @@
     <script src="assets/js/script.js"></script>
     <div class="quiz-container">
         <div class="quiz-area">
-            <h1 class="qstn">Welcome to The Rwagasore Chronicles!</h1>
-            <h3>Interactive quiz where you get to learn more about Prince Louis Rwagasore</h3>
-            <div class="answer-area"></div>
-            <md-filled-tonal-button onclick="startQuiz()">Start Quiz</md-filled-tonal-button>
+            <h1 class="qstn" id="question-text">Question will appear here</h1>
+            <div class="answer-area" id="answer-options"></div>
+            <md-filled-tonal-button>Next Question</md-filled-tonal-button>
         </div>
-        <div class="qstn-illustration">
+        <div class="qstn-illustration" id="question-image">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWkEurRG7SmZEs4lUnfeKj8emo2zUgh7Z3r86OQoqDNgjBfi5K"
                 alt="Question illustration">
         </div>
+    </div>
+    <div class="progression-score">
+        <button class="progression-bar">Progression bar</button>
+        <p class="score">Points: x/y</p>
     </div>
 </body>
 
