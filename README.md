@@ -14,6 +14,9 @@ Our Prince Louis Rwagasore online quiz site offers users an opportunity to learn
 The site is built with an emphasis on simplicity and engagement, with features that allow users to track their progress and see how well they know their subject.
 
 ## Features
+![alt text](/assets/images/image.png)
+![alt text](/assets/images/image2.png)
+![alt text](/assets/images/image3.png)
 
 ### 1. **Question Text Area**
    - Each quiz question is displayed prominently in a text area that ensures readability and focus.
