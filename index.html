@@ -26,17 +26,140 @@
 
 <body>
     <script src="assets/js/script.js"></script>
+    <!--Landing Page -->
     <div class="quiz-container">
         <div class="quiz-area">
             <h1 class="qstn">Welcome to The Rwagasore Chronicles!</h1>
             <h3>Interactive quiz where you get to learn more about Prince Louis Rwagasore</h3>
-            <div class="answer-area"></div>
-            <md-filled-tonal-button onclick="startQuiz()">Start Quiz</md-filled-tonal-button>
+            <md-filled-tonal-button onclick="location.href='#question-1'">Start Quiz</md-filled-tonal-button>
         </div>
         <div class="qstn-illustration">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWkEurRG7SmZEs4lUnfeKj8emo2zUgh7Z3r86OQoqDNgjBfi5K"
                 alt="Question illustration">
         </div>
+    </div>
+    <!-- Quiz Page -->
+    <div id="question-1" class="quiz-container">
+        <div class="quiz-area">
+            <h3>Q.1</h3>
+            <h2>Who was Prince Louis Rwagasore?</h2>
+            <div class="answer-area">
+                <ol type="A">
+                    <li>A colonial governor</li>
+                    <li>The first Prime Minister of Burundi</li>
+                    <li>A businessman</li>
+                    <li>A religious leader</li>
+                </ol>
+            </div>
+            <md-outlined-text-field id="userAnswerOne" label="Your answer(A,B,C or D)">
+            </md-outlined-text-field>
+            <md-filled-tonal-button id="submitBtn1"
+                onclick="location.href='#question-2'">Submit</md-filled-tonal-button>
+            <h3 id="score">Score: </h3>
+            <h4 id="progression">Progression: </h4>
+        </div>
+        <div class="qstn-illustration">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbqEkvNqJ0wzQ1bHLBiDfXXr_40nbtNuhxeg&s"
+                alt="Question One">
+        </div>
+    </div>
+    <div id="question-2" class="quiz-container">
+        <div class="quiz-area">
+            <h3>Q.2</h3>
+            <h2>Prince Louis Rwagasore born in 1930</h2>
+            <div class="answer-area">
+                <ol type="A">
+                    <li>True</li>
+                    <li>False</li>
+                </ol>
+            </div>
+            <md-outlined-text-field id="userAnswerTwo" label="Your answer(A,B,C or D)">
+            </md-outlined-text-field>
+            <md-filled-tonal-button id="submitBtn2"
+                onclick="location.href='#question-3'">Submit</md-filled-tonal-button>
+            <h3 id="score">Score: </h3>
+            <h4 id="progression">Progression: </h4>
+        </div>
+        <div class="qstn-illustration">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4ZN5Sqgx24K-MqV4w_kO0-f-m4I9WnFOcg&"
+                alt="Question Two">
+        </div>
+    </div>
+    <div id="question-3" class="quiz-container">
+        <div class="quiz-area">
+            <h3>Q.3</h3>
+            <h2>Which political party did Prince Louis Rwagasore found in Burundi?</h2>
+            <div class="answer-area">
+                <ol type="A">
+                    <li>FRODEBU</li>
+                    <li>RANAC</li>
+                    <li>UPRONA</li>
+                    <li>CNDD-FDD</li>
+                </ol>
+            </div>
+            <md-outlined-text-field id="userAnswerThree" label="Your answer(A,B,C or D)">
+            </md-outlined-text-field>
+            <md-filled-tonal-button id="submitBtn3"
+                onclick="location.href='#question-4'">Submit</md-filled-tonal-button>
+            <h3 id="score">Score: </h3>
+            <h4 id="progression">Progression: </h4>
+        </div>
+        <div class="qstn-illustration">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrS0CZvQXMCoqgpXaUTO3-aDsEM2uYlpeBrA&s"
+                alt="Question Three">
+        </div>
+    </div>
+    <div id="question-4" class="quiz-container">
+        <div class="quiz-area">
+            <h3>Q.4</h3>
+            <h2>In which year did Burundi gain independence?</h2>
+            <div class="answer-area">
+                <ol type="A">
+                    <li>1962</li>
+                    <li>1965</li>
+                    <li>1961</li>
+                    <li>1960</li>
+                </ol>
+            </div>
+
+            <md-outlined-text-field id="userAnswerFour" label="Your answer(A,B,C or D)">
+            </md-outlined-text-field>
+            <md-filled-tonal-button id="submitBtn4"
+                onclick="location.href='#question-5'">Submit</md-filled-tonal-button>
+            <h3 id="score">Score: </h3>
+            <h4 id="progression">Progression: </h4>
+        </div>
+        <div class="qstn-illustration">
+            <img src="https://nationaltoday.com/wp-content/uploads/2022/05/118-Burundi.jpg" alt="Question Four">
+        </div>
+    </div>
+    <div id="question-5" class="quiz-container">
+        <div class="quiz-area">
+            <h3>Q.5</h3>
+            <h2>Which European country colonized Burundi before its independence?</h2>
+            <div class="answer-area">
+                <ol type="A">
+                    <li>France</li>
+                    <li>Portugal</li>
+                    <li>Belgium</li>
+                    <li>Germany</li>
+                </ol>
+            </div>
+            <md-outlined-text-field id="userAnswerFive" label="Your answer(A,B,C or D)">
+            </md-outlined-text-field>
+            <md-filled-tonal-button id="submitBtn5" onclick="location.href='#endQuiz'">Submit</md-filled-tonal-button>
+            <h3 id="score">Score: </h3>
+            <h4 id="progression">Progression: </h4>
+        </div>
+        <div class="qstn-illustration">
+            <img src="https://cdn04.allafrica.com/download/pic/main/main/csiid/00421276:c97bb29eda5ac86afce1bae7c25e7d25:arc614x376:w735:us1.jpg"
+                alt="Question Five">
+        </div>
+    </div>
+    <!-- End Quiz-->
+    <div id="endQuiz" class="end-quiz">
+        <h2>Quiz Completed!</h2>
+        <p id="finalScore">Your Score: 0</p>
     </div>
 </body>
 

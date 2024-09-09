@@ -1,98 +1,138 @@
-// Checking if all is good
-console.log('Connected')
-// Function to start quiz
-function startQuiz() {
-    window.location.href = 'quiz-template.html';
-}
-// Quiz content and details
-const questions = [
-    {
-        text: 'Who was Prince Louis Rwagasore?',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbqEkvNqJ0wzQ1bHLBiDfXXr_40nbtNuhxeg&s',
-        type: 'checkbox',
-        options: ['A colonial governor', 'The first Prime Minister of Burundi', 'A businessman', 'A religious leader'],
-        correctAnswer: 'The first Prime Minister of Burundi'
-    },
-    {
-        text: 'Prince Louis Rwagasore born in 1930',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4ZN5Sqgx24K-MqV4w_kO0-f-m4I9WnFOcg&s',
-        type: 'checkbox',
-        options: ['True', 'False'],
-        correctAnswer: 'True'
-    },
-    {
-        text: 'Which political party did Prince Louis Rwagasore found in Burundi?',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrS0CZvQXMCoqgpXaUTO3-aDsEM2uYlpeBrA&s',
-        type: 'text',
-        correctAnswer: 'UPRONA'
-    },
-    {
-        text: 'In which year did Burundi gain independence?',
-        image: 'https://nationaltoday.com/wp-content/uploads/2022/05/118-Burundi.jpg',
-        type: 'slider',
-        min: 1920,
-        max: 1970,
-        step: 2,
-        correctAnswer: 1962
-    },
-    {
-        text: 'Which European country colonized Burundi before its independence?',
-        image: 'https://cdn04.allafrica.com/download/pic/main/main/csiid/00421276:c97bb29eda5ac86afce1bae7c25e7d25:arc614x376:w735:us1.jpg',
-        type: 'carousel',
-        options: [
-            { img: 'https://i.natgeofe.com/k/04665f4a-3f8d-4b62-8ca3-09ce7dfc5a20/france-eiffel-tower_2x3.jpg', alt: 'France' },
-            { img: 'https://www.brussels.com/media/public/sheetal/Atomium.jpg', alt: 'Belgium' },
-            { img: 'https://www.berlin.de/binaries/asset/image_assets/6274092/ratio_4_3/1684826673/800x600/', alt: 'Germany' },
-            { img: 'https://i.natgeofe.com/k/a6c9f195-de20-445d-9d36-745ef56042c5/OG_Colosseum_Ancient-Rome_KIDS_1122_3x2.jpg', alt: 'Italy' },
-        ],
-        correctAnswer: 'https://www.brussels.com/media/public/sheetal/Atomium.jpg'
-    },
-]
 
-let currentQuestion = 0;
-let score = 0;
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Checking if all is good
+    console.log('Connected')
 
-// Function to load a question
-function loadQuestion(index) {
-    const question = questions[index];
-    document.getElementById("question-text").innerHTML = `<h2>${question.text}</h2>`;
-    document.getElementById("question-image").src = question.image;
+    const answerOne = document.getElementById('userAnswerOne')
+    const answerTwo = document.getElementById('userAnswerTwo')
+    const answerThree = document.getElementById('userAnswerThree')
+    const answerFour = document.getElementById('userAnswerFour')
+    const answerFive = document.getElementById('userAnswerFive')
 
-    const answerOptionsArea = document.getElementById("answer-options");
-    answerOptionsArea.innerHTML = ""; // Clear previous options
+    const correctAnswerOne = 'B'.toLowerCase()
+    const correctAnswerTwo = 'A'.toLowerCase()
+    const correctAnswerThree = 'C'.toLowerCase()
+    const correctAnswerFour = 'A'.toLowerCase()
+    const correctAnswerFive = 'C'.toLowerCase()
 
-    // Handle different question types
-    if (question.type === "checkbox") {
-        question.options.forEach(option => {
-            answerOptionsArea.innerHTML += `
-          <md-checkbox id="checkbox-two" touch-target="wrapper" id="${option}"></md-checkbox>
-          <label for="${option}">${option}</label>
-        `;
-        });
-    } else if (question.type === "text") {
-        answerOptionsArea.innerHTML += `
-        <md-filled-text-field label="Your answer" id="answerText" value="Value">
-        </md-filled-text-field>
-      `;
-    } else if (question.type === "carousel") {
-        // Create a carousel of image options
-        answerOptionsArea.innerHTML += `<div class="carousel-container" id="carouselContainer"></div>`;
-        const carouselContainer = document.getElementById("carouselContainer");
+    const submitBtnOne = document.getElementById('submitBtn1')
+    const submitBtnTwo = document.getElementById('submitBtn2')
+    const submitBtnThree = document.getElementById('submitBtn3')
+    const submitBtnFour = document.getElementById('submitBtn4')
+    const submitBtnFive = document.getElementById('submitBtn5')
 
-        question.options.forEach(option => {
-            carouselContainer.innerHTML += `
-          <div class="carousel-item">
-            <img src="${option.img}" alt="${option.alt}" class="carousel-img" onclick="selectImage('${option.img}')">
-          </div>
-        `;
-        });
+    let score = 0
+    let progression = 0
+
+    const scoreDisplay = document.getElementById('score')
+    let progressionDisplay = document.getElementById('progression').textContent
+
+    //Add function to check answer, record score and progression
+    submitBtnOne.addEventListener('click', () => {
+        const answer1 = answerOne.value
+        console.log(answer1)
+        if (answer1.toLowerCase() === correctAnswerOne) {
+            score++
+            progression++
+            console.log(score)
+            console.log(progression)
+            scoreDisplay.textContent = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else if (answer1.toLowerCase() === '') {
+            alert('Fill in answer')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else {
+            progression++
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
     }
-    else if (question.type === "slider") {
-        answerOptionsArea.innerHTML += `
-          <md-slider range id="slider" min="${question.min}" max="${question.max}" step="${question.step}" value="${question.min}"></md-slider>
-          <md-slider labeled id="sliderValue">Selected Value: ${question.min}</md-slider>
-        `;
+    )
+    submitBtnTwo.addEventListener('click', () => {
+        const answer2 = answerTwo.value
+
+        if (answer2.toLowerCase() === correctAnswerTwo) {
+            score++
+            progression++
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else if (answer2.toLowerCase() === '') {
+            alert('Fill in answer')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else {
+            progression++
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
     }
-}
-// Load the first question initially
-loadQuestion(currentQuestion);
+    )
+    submitBtnThree.addEventListener('click', () => {
+        const answer3 = answerThree.value
+        console.log(answer3)
+        if (answer3.toLowerCase() === correctAnswerThree) {
+            score++
+            progression++
+            scoreTextContent = 'Score: ' + score
+            progressionTextContent = 'Progression:' + progression + ' /5'
+        }
+        else if (answer3.toLowerCase() === '') {
+            alert('Fill in answer')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else {
+            progression++
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+    })
+    submitBtnFour.addEventListener('click', () => {
+        const answer4 = answerFour.value
+        console.log(answer4)
+        if (answer4.toLowerCase() === correctAnswerFour) {
+            score++
+            progression++
+            console.log('so far so good')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else if (answer4.toLowerCase() === '') {
+            alert('Fill in answer')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else {
+            progression++
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+    })
+    submitBtnFive.addEventListener('click', () => {
+        const answer5 = answerFive.value
+        console.log(answer5)
+        if (answer5.toLowerCase() === correctAnswerFive) {
+            score++
+            progression++
+            console.log('so far so good')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else if (answer5.toLowerCase() === '') {
+            alert('Fill in answer')
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+        else {
+            progression++
+            scoreDisplay = 'Score: ' + score
+            progressionDisplay = 'Progression:' + progression + ' /5'
+        }
+    })
+})
+
