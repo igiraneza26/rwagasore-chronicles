@@ -1,9 +1,9 @@
 {
-    "name": "plr-history",
+    "name": "rwagasore-chronicles",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "script.js",
     "scripts": {
-      "start": "node index.js"
+      "start": "node script.js"
     },
     "dependencies": {
       "express": "^4.17.1"
