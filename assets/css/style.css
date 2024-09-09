@@ -19,9 +19,14 @@ body {
 }
 
 .quiz-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: white;
     flex: 0 0 70%;
-    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
 .answer-area {
@@ -29,6 +34,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: start;
+}
+
+#submitBtn1{
+    gap: 10px;
+}
+#submitBtn2{
+    padding-top: 10px;
+}
+#submitBtn3{
+    padding-top: 10px;
+}
+#submitBtn4{
+    padding-top: 10px;
+}
+#submitBtn5{
+    padding-top: 10px;
 }
 
 .qstn-illustration {

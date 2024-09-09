@@ -25,113 +25,104 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let progression = 0
 
     const scoreDisplay = document.getElementById('score')
-    let progressionDisplay = document.getElementById('progression').textContent
+    const progressionDisplay = document.getElementById('progression')
 
     //Add function to check answer, record score and progression
     submitBtnOne.addEventListener('click', () => {
         const answer1 = answerOne.value
-        console.log(answer1)
         if (answer1.toLowerCase() === correctAnswerOne) {
             score++
             progression++
-            console.log(score)
-            console.log(progression)
-            scoreDisplay.textContent = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else if (answer1.toLowerCase() === '') {
-            alert('Fill in answer')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            alert('Fill in answer to increase score')
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else {
             progression++
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
     }
     )
     submitBtnTwo.addEventListener('click', () => {
         const answer2 = answerTwo.value
-
         if (answer2.toLowerCase() === correctAnswerTwo) {
             score++
             progression++
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else if (answer2.toLowerCase() === '') {
-            alert('Fill in answer')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            alert('Fill in answer to increase score')
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else {
             progression++
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
     }
     )
     submitBtnThree.addEventListener('click', () => {
         const answer3 = answerThree.value
-        console.log(answer3)
         if (answer3.toLowerCase() === correctAnswerThree) {
             score++
             progression++
-            scoreTextContent = 'Score: ' + score
-            progressionTextContent = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else if (answer3.toLowerCase() === '') {
-            alert('Fill in answer')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            alert('Fill in answer to increase score')
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else {
             progression++
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
     })
     submitBtnFour.addEventListener('click', () => {
         const answer4 = answerFour.value
-        console.log(answer4)
         if (answer4.toLowerCase() === correctAnswerFour) {
             score++
             progression++
-            console.log('so far so good')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else if (answer4.toLowerCase() === '') {
-            alert('Fill in answer')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            alert('Fill in answer to increase score')
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else {
             progression++
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
     })
     submitBtnFive.addEventListener('click', () => {
         const answer5 = answerFive.value
-        console.log(answer5)
         if (answer5.toLowerCase() === correctAnswerFive) {
             score++
             progression++
-            console.log('so far so good')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else if (answer5.toLowerCase() === '') {
-            alert('Fill in answer')
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            alert('Fill in answer to increase score')
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
         else {
             progression++
-            scoreDisplay = 'Score: ' + score
-            progressionDisplay = 'Progression:' + progression + ' /5'
+            scoreDisplay.textContent = `Score: ${score}`
+            progressionDisplay.textContent = `Progression: ${progression}/5`
         }
     })
 })
